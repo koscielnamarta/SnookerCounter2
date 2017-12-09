@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Snooker Counter</string>
+    <string name="playerAName">Put Player A name</string>
+    <string name="playerBName">Put Player B name</string>
+    <string name="red">+1</string>
+    <string name="yellow">+2</string>
+    <string name="brown">+3</string>
+    <string name="green">+4</string>
+    <string name="blue">+5</string>
+    <string name="pink">+6</string>
+    <string name="black">+7</string>
+    <string name="foul_for_four">F +4</string>
+    <string name="foul_for_five">F +5</string>
+    <string name="foul_for_six">F +6</string>
+    <string name="foul_for_seven">F +7</string>
+    <string name="snooker">SNOOKER</string>
+
+
+</resources>

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.snookercounter.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/playerAName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:cursorVisible="false"
+                android:gravity="right"
+                android:hint="@string/playerAName" />
+
+            <TextView
+                android:id="@+id/playerAScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="45dp" />
+
+            <Button
+                android:id="@+id/red_A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="displayRedPlayerA"
+                android:backgroundTint="@color/redButton" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/yellow_A"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayYellowPlayerA"
+                    android:backgroundTint="@color/yellowButton" />
+
+                <Button
+                    android:id="@+id/brown_A"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayBrownPlayerA"
+                    android:backgroundTint="@color/brownButton" />
+
+                <Button
+                    android:id="@+id/green_A"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayGreenPlayerA"
+                    android:backgroundTint="@color/greenButton" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/blue_A"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayBluePlayerA"
+                    android:backgroundTint="@color/blueButton" />
+
+                <Button
+                    android:id="@+id/pink_A"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayPinkPlayerA"
+                    android:backgroundTint="@color/pinkButton" />
+
+                <Button
+                    android:id="@+id/black_A"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayBlackPlayerA"
+                    android:backgroundTint="@color/blackButton" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/foul_four_A"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayFoulFourPlayerA"
+                    android:text="@string/foul_for_four" />
+
+                <Button
+                    android:id="@+id/foul_five_A"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayFoulFivePlayerA"
+                    android:text="@string/foul_for_five" />
+
+                <Button
+                    android:id="@+id/foul_six_A"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayFoulSixPlayerA"
+                    android:text="@string/foul_for_six" />
+
+                <Button
+                    android:id="@+id/foul_seven_A"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/foul_six_A"
+                    android:layout_weight="1"
+                    android:onClick="displayFoulSevenPlayerA"
+                    android:text="@string/foul_for_seven" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/snooker_A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="displaySnookersForPlayerA"
+                android:text="@string/snooker" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/roundsA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ROUNDS WON"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/rounds_counterA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/foulsA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FOULS IN MATCH" />
+
+                <TextView
+                    android:id="@+id/fouls_counterA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/snookersA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SNOOKERS IN MATCH" />
+
+                <TextView
+                    android:id="@+id/snookers_counterA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/playerBName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:cursorVisible="false"
+                android:gravity="left"
+                android:hint="@string/playerBName" />
+
+            <TextView
+                android:id="@+id/playerBScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="0"
+                android:textSize="45dp" />
+
+            <Button
+                android:id="@+id/red_B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="displayRedPlayerB"
+                android:backgroundTint="@color/redButton" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/yellow_B"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayYellowPlayerB"
+                    android:backgroundTint="@color/yellowButton" />
+
+                <Button
+                    android:id="@+id/brown_B"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayBrownPlayerB"
+                    android:backgroundTint="@color/brownButton" />
+
+                <Button
+                    android:id="@+id/green_B"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayGreenPlayerB"
+                    android:backgroundTint="@color/greenButton" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/blue_B"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayBluePlayerB"
+                    android:backgroundTint="@color/blueButton" />
+
+                <Button
+                    android:id="@+id/pink_B"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayPinkPlayerB"
+                    android:backgroundTint="@color/pinkButton" />
+
+                <Button
+                    android:id="@+id/black_B"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayBlackPlayerB"
+                    android:backgroundTint="@color/blackButton" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/foul_four_B"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayFoulFourPlayerB"
+                    android:text="@string/foul_for_four" />
+
+                <Button
+                    android:id="@+id/foul_five_B"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayFoulFivePlayerB"
+                    android:text="@string/foul_for_five" />
+
+                <Button
+                    android:id="@+id/foul_six_B"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="displayFoulSixPlayerB"
+                    android:text="@string/foul_for_six" />
+
+                <Button
+                    android:id="@+id/foul_seven_B"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="displayFoulSevenPlayerB"
+                    android:layout_weight="1"
+                    android:text="@string/foul_for_seven" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/snooker_B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="displaySnookersForPlayerB"
+                android:text="@string/snooker" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/roundsB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="ROUNDS WON"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/rounds_counterB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/foulsB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="FOULS IN MATCH" />
+
+                <TextView
+                    android:id="@+id/fouls_counterB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/snookersB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="SNOOKERS IN MATCH" />
+
+                <TextView
+                    android:id="@+id/snookers_counterB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/end_round"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:onClick="endRound"
+            android:text="END ROUND"
+            android:textSize="24dp" />
+
+        <Button
+            android:id="@+id/end_match"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:onClick="endMatch"
+            android:text="END MATCH"
+            android:textSize="24dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
