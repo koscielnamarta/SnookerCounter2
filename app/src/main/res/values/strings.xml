@@ -14,6 +14,11 @@
     <string name="foul_for_six">F +6</string>
     <string name="foul_for_seven">F +7</string>
     <string name="snooker">SNOOKER</string>
-
+    <string name="rounds">ROUNDS WON</string>
+    <string name="fouls">FOULS IN MATCH</string>
+    <string name="snookersInMatch">SNOOKERS IN MATCH</string>
+    <string name="endRound">END ROUND</string>
+    <string name="endMatch">END MATCH</string>
+    <string name="startValue">0</string>
 
 </resources>

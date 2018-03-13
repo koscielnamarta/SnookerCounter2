@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginXS">4dp</dimen>
+    <dimen name="marginS">8dp</dimen>
+    <dimen name="marginM">16dp</dimen>
+    <dimen name="marginL">32dp</dimen>
+    <dimen name="playerNameHeight">45dp</dimen>
+    <dimen name="playerNameHeightLand">36dp</dimen>
+    <dimen name="textXL">45sp</dimen>
+    <dimen name="textM">20sp</dimen>
+    <dimen name="textL">24sp</dimen>
+    <dimen name="textMPlus">32sp</dimen>
+    <dimen name="textS">14sp</dimen>
+    <dimen name="textXM">16sp</dimen>
+    <dimen name="viewWidth">1dp</dimen>
+    <dimen name="buttonSize">40dp</dimen>
+    <dimen name="buttonSizeLand">40dp</dimen>
+</resources>

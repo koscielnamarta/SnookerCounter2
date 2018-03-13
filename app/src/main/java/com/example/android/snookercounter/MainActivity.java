@@ -3,14 +3,14 @@ package com.example.android.snookercounter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText playerAName;
-    private EditText playerBName;
-
+    public Button redButtonA;
+    public Button redButtonB;
     int playerAScore = 0;
     int playerBScore = 0;
     int roundsCounterA = 0;
@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     int foulsCounterB = 0;
     int snookersCounterA = 0;
     int snookersCounterB = 0;
+    int redBallCounter = 0;
+    private EditText playerAName;
+    private EditText playerBName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         playerAName = (EditText) findViewById(R.id.playerAName);
         playerBName = (EditText) findViewById(R.id.playerBName);
+        redButtonA = (Button) findViewById(R.id.red_A);
+        redButtonB = (Button) findViewById(R.id.red_B);
 
+//        Saving values when rotating
         if (savedInstanceState != null) {
             playerAScore = savedInstanceState.getInt("playerAScore");
             playerBScore = savedInstanceState.getInt("playerBScore");
@@ -36,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
             foulsCounterB = savedInstanceState.getInt("foulsCounterB");
             snookersCounterA = savedInstanceState.getInt("snookersCounterA");
             snookersCounterB = savedInstanceState.getInt("snookersCounterB");
+            redBallCounter = savedInstanceState.getInt("redBallCounter");
+            if (redBallCounter >= 15) {
+                redButtonA.setClickable(false);
+                redButtonA.setBackgroundResource(R.drawable.gray_buttons);
+
+                redButtonB.setClickable(false);
+                redButtonB.setBackgroundResource(R.drawable.gray_buttons);
+            }
             displayForPlayerA(playerAScore);
             displayForPlayerB(playerBScore);
             displayRoundsPlayerA(roundsCounterA);
@@ -59,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("foulsCounterB", foulsCounterB);
         outState.putInt("snookersCounterA", snookersCounterA);
         outState.putInt("snookersCounterB", snookersCounterB);
+        outState.putInt("redBallCounter", redBallCounter);
     }
 
     /**
@@ -70,18 +85,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayRoundsPlayerA(int rounds) {
-        TextView scoreView = (TextView) findViewById(R.id.rounds_counterA);
-        scoreView.setText(String.valueOf(rounds));
+        TextView roundsView = (TextView) findViewById(R.id.rounds_counterA);
+        roundsView.setText(String.valueOf(rounds));
     }
 
     public void displayFoulsPlayerA(int fouls) {
-        TextView scoreView = (TextView) findViewById(R.id.fouls_counterA);
-        scoreView.setText(String.valueOf(fouls));
+        TextView foulsView = (TextView) findViewById(R.id.fouls_counterA);
+        foulsView.setText(String.valueOf(fouls));
     }
 
     public void displaySnookersPlayerA(int snookers) {
-        TextView scoreView = (TextView) findViewById(R.id.snookers_counterA);
-        scoreView.setText(String.valueOf(snookers));
+        TextView snookersView = (TextView) findViewById(R.id.snookers_counterA);
+        snookersView.setText(String.valueOf(snookers));
     }
 
 
@@ -113,7 +128,22 @@ public class MainActivity extends AppCompatActivity {
      * Displaying points for player A
      */
 
+
     public void displayRedPlayerA(View view) {
+
+        if (redBallCounter < 15) {
+            redBallCounter = redBallCounter + 1;
+        }
+
+        if (redBallCounter >= 15) {
+            redButtonA.setClickable(false);
+            redButtonA.setBackgroundResource(R.drawable.gray_buttons);
+
+            redButtonB.setClickable(false);
+            redButtonB.setBackgroundResource(R.drawable.gray_buttons);
+        }
+
+
         playerAScore = playerAScore + 1;
         displayForPlayerA(playerAScore);
     }
@@ -149,29 +179,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayFoulFourPlayerA(View view) {
-        playerAScore = playerAScore + 4;
-        displayForPlayerA(playerAScore);
+        playerBScore = playerBScore + 4;
+        displayForPlayerB(playerBScore);
         foulsCounterA = foulsCounterA + 1;
         displayFoulsPlayerA(foulsCounterA);
     }
 
     public void displayFoulFivePlayerA(View view) {
-        playerAScore = playerAScore + 5;
-        displayForPlayerA(playerAScore);
+        playerBScore = playerBScore + 5;
+        displayForPlayerB(playerBScore);
         foulsCounterA = foulsCounterA + 1;
         displayFoulsPlayerA(foulsCounterA);
     }
 
     public void displayFoulSixPlayerA(View view) {
-        playerAScore = playerAScore + 6;
-        displayForPlayerA(playerAScore);
+        playerBScore = playerBScore + 6;
+        displayForPlayerB(playerBScore);
         foulsCounterA = foulsCounterA + 1;
         displayFoulsPlayerA(foulsCounterA);
     }
 
     public void displayFoulSevenPlayerA(View view) {
-        playerAScore = playerAScore + 7;
-        displayForPlayerA(playerAScore);
+        playerBScore = playerBScore + 7;
+        displayForPlayerB(playerBScore);
         foulsCounterA = foulsCounterA + 1;
         displayFoulsPlayerA(foulsCounterA);
     }
@@ -185,8 +215,20 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displaying points for player B
      */
-
     public void displayRedPlayerB(View view) {
+
+        if (redBallCounter < 15) {
+            redBallCounter = redBallCounter + 1;
+        }
+
+        if (redBallCounter >= 15) {
+            redButtonA.setClickable(false);
+            redButtonA.setBackgroundResource(R.drawable.gray_buttons);
+
+            redButtonB.setClickable(false);
+            redButtonB.setBackgroundResource(R.drawable.gray_buttons);
+        }
+
         playerBScore = playerBScore + 1;
         displayForPlayerB(playerBScore);
     }
@@ -222,29 +264,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayFoulFourPlayerB(View view) {
-        playerBScore = playerBScore + 4;
-        displayForPlayerB(playerBScore);
+        playerAScore = playerAScore + 4;
+        displayForPlayerA(playerAScore);
         foulsCounterB = foulsCounterB + 1;
         displayFoulsPlayerB(foulsCounterB);
     }
 
     public void displayFoulFivePlayerB(View view) {
-        playerBScore = playerBScore + 5;
-        displayForPlayerB(playerBScore);
+        playerAScore = playerAScore + 5;
+        displayForPlayerA(playerAScore);
         foulsCounterB = foulsCounterB + 1;
         displayFoulsPlayerB(foulsCounterB);
     }
 
     public void displayFoulSixPlayerB(View view) {
-        playerBScore = playerBScore + 6;
-        displayForPlayerB(playerBScore);
+        playerAScore = playerAScore + 6;
+        displayForPlayerA(playerAScore);
         foulsCounterB = foulsCounterB + 1;
         displayFoulsPlayerB(foulsCounterB);
     }
 
     public void displayFoulSevenPlayerB(View view) {
-        playerBScore = playerBScore + 7;
-        displayForPlayerB(playerBScore);
+        playerAScore = playerAScore + 7;
+        displayForPlayerA(playerAScore);
         foulsCounterB = foulsCounterB + 1;
         displayFoulsPlayerB(foulsCounterB);
     }
@@ -260,8 +302,15 @@ public class MainActivity extends AppCompatActivity {
         } else {
             roundsCounterB = roundsCounterB + 1;
         }
+
+//        resetting values
         playerAScore = 0;
         playerBScore = 0;
+        redBallCounter = 0;
+        redButtonA.setClickable(true);
+        redButtonA.setBackgroundResource(R.drawable.red_buttons);
+        redButtonB.setClickable(true);
+        redButtonB.setBackgroundResource(R.drawable.red_buttons);
         displayForPlayerA(playerAScore);
         displayForPlayerB(playerBScore);
         displayRoundsPlayerA(roundsCounterA);
@@ -269,6 +318,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void endMatch(View view) {
+        //        resetting values
         playerAScore = 0;
         playerBScore = 0;
         roundsCounterA = 0;
@@ -277,6 +327,13 @@ public class MainActivity extends AppCompatActivity {
         foulsCounterB = 0;
         snookersCounterA = 0;
         snookersCounterB = 0;
+        redBallCounter = 0;
+        redButtonA.setClickable(true);
+        redButtonA.setBackgroundResource(R.drawable.red_buttons);
+        redButtonB.setClickable(true);
+        redButtonB.setBackgroundResource(R.drawable.red_buttons);
+        playerAName.setText(null);
+        playerBName.setText(null);
 
         displayForPlayerA(playerAScore);
         displayForPlayerB(playerBScore);

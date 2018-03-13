@@ -10,4 +10,5 @@
     <color name="blueButton">#0c61c1</color>
     <color name="pinkButton">#f969eb</color>
     <color name="blackButton">#000000</color>
+    <color name="disabledButtons">#D3D3D3</color>
 </resources>
